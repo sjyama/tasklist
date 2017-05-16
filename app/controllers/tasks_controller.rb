@@ -48,7 +48,7 @@ class TasksController < ApplicationController
     flash[:success] = 'タスク削除：正常終了'
     redirect_to tasks_url
   end
-end
+end #このendの位置も誤りでしょうか？？
 
 private
 def set_task
