@@ -14,16 +14,15 @@
       <% @tasks.each do |task| %>
         <tr>
           <td><%= link_to task.id, task %></td>
-          <td><%= task.task%></td>
-          <td><%= task.status%></td>
+          <td><%= task.content %></td>
+          <td><%= task.status %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <div>
-    <!-- これはどのような意味？-->
-    <%= paginate @tasks %>
+    <%= paginate @tasks %><!-- ページネーションのための記述-->
   </div>
 <% end %>
 
-<%= link_to '新規タスクの追加', new_task_path, class: "btn btn-primary" %>
+<!-- <%= link_to '新規タスクの追加', new_task_path, class: "btn btn-primary" %> -->

@@ -2,7 +2,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
  
   def index
-    @tasks = Task.all
+    #@tasks = Task.all.page(params[:page])
+    @tasks = Task.all.page(params[:page]).per(8)
   end
 
   def show
@@ -48,14 +49,14 @@ class TasksController < ApplicationController
     flash[:success] = 'タスク削除：正常終了'
     redirect_to tasks_url
   end
-end #このendの位置も誤りでしょうか？？
 
-private
-def set_task
-  @task = Task.find(params[:id])
-end
+  private
+  def set_task
+    @task = Task.find(params[:id])
+  end
 
-#Strong Parameter
-def task_params
-  params.require(:task).permit(:content, :status)
+  #Strong Parameter
+  def task_params
+    params.require(:task).permit(:content, :status)
+  end
 end
