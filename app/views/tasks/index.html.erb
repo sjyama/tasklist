@@ -8,7 +8,6 @@
           <th>id</th>
           <th>タスク</th>
           <th>ステータス</th>
-          <th>ユーザーID</th><!-- 仮-->
         </tr>
       </thead>
       <tbody>
@@ -17,7 +16,6 @@
             <td><%= link_to task.id, task %></td>
             <td><%= task.content %></td>
             <td><%= task.status %></td>
-            <td><%= task.user_id %></td><!-- 仮-->
           </tr>
         <% end %>
       </tbody>
